@@ -29,11 +29,13 @@ const SignInPage = () => {
       <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
         <input
           className="auth_input"
+          placeholder="Email"
           type="text"
           {...register('email', { required: true })}
         />
         <input
           className="auth_input"
+          placeholder="Password"
           type="password"
           {...register('password', { required: true })}
         />
