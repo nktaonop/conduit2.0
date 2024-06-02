@@ -84,9 +84,6 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
 }
 
 article,
@@ -103,26 +100,9 @@ section {
   display: block;
 }
 
-body {
-  line-height: 1;
-}
-
 ol,
 ul {
   list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: '';
-  content: none;
 }
 
 table {
@@ -130,7 +110,6 @@ table {
   border-spacing: 0;
 }
 
-/* Ваши стили */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -141,11 +120,6 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 .auth_input {
