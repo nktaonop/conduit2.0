@@ -1,19 +1,23 @@
 'use client'
 import Link from 'next/link'
 import { SubmitHandler, useForm } from 'react-hook-form'
-import { Route } from '@/constants/common.constants'
+import { useRouter } from 'next/navigation'
+import { AUTH_TOKEN_KEY, Route } from '@/constants/common.constants'
 import { signIn } from '@/services/auth'
 import { AuthLogin } from '@/interfaces/auth'
+import { setItem } from '@/helpers/storage'
 import s from './sing-in.module.scss'
-import { useRouter } from 'next/navigation'
 
 const SignInPage = () => {
   const { register, handleSubmit } = useForm<AuthLogin>()
   const router = useRouter()
 
-  const onSubmit: SubmitHandler<AuthLogin> = (data) => {
+  const onSubmit: SubmitHandler<AuthLogin> = async (data) => {
     try {
-      signIn(data)
+      const {
+        data: { user },
+      } = await signIn(data)
+      setItem(AUTH_TOKEN_KEY, user.token)
       router.push(Route.HOME)
     } catch (error) {
       console.log(error)

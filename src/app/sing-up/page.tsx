@@ -3,17 +3,21 @@ import Link from 'next/link'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { useRouter } from 'next/navigation'
 import { AuthRegister } from '@/interfaces/auth'
-import { Route } from '@/constants/common.constants'
+import { AUTH_TOKEN_KEY, Route } from '@/constants/common.constants'
 import { signUp } from '@/services/auth'
 import s from './sign-up.module.scss'
+import { setItem } from '@/helpers/storage'
 
 const SignUpPage = () => {
   const { register, handleSubmit } = useForm<AuthRegister>()
   const router = useRouter()
 
-  const onSubmit: SubmitHandler<AuthRegister> = (data) => {
+  const onSubmit: SubmitHandler<AuthRegister> = async (data) => {
     try {
-      signUp(data)
+      const {
+        data: { user },
+      } = await signUp(data)
+      setItem(AUTH_TOKEN_KEY, user.token)
       router.push(Route.HOME)
     } catch (error) {
       console.log(error)
