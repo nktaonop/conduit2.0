@@ -1,8 +1,31 @@
+@import '../../styles/variables.scss';
+
 .header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+.label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $primary_color;
+}
+
+.navbar_container {
+  display: flex;
 }
 
 .nav_items {
   margin-left: 1rem;
+  color: $nav_items_color;
+
+  &:hover {
+    color: $nav_items_hover_color;
+  }
+}
+
+.active {
+  color: $nav_items_hover_color;
 }
