@@ -1,9 +1,9 @@
 'use client'
+import { useEffect, useState } from 'react'
 import ArticleComponent from '@/components/article/article'
 import BannerComponent from '@/components/banner/banner'
 import { Article } from '@/interfaces/article'
 import { getArticles } from '@/services/articles'
-import { useEffect, useState } from 'react'
 
 export default function Home() {
   const [articles, setArticles] = useState<Article[]>([])
@@ -12,7 +12,6 @@ export default function Home() {
     const {
       data: { articles },
     } = await getArticles()
-    console.log(articles)
     setArticles(articles)
   }
 

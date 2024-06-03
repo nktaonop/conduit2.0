@@ -1,0 +1,97 @@
+@import '../../styles/variables.scss';
+
+.article {
+  max-width: 825px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.about_author {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  margin-right: 0.3rem;
+  border-radius: 50%;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+
+  .username {
+    color: $primary_color;
+
+    &:hover {
+      color: $primary_hover_color;
+      text-decoration: underline;
+    }
+  }
+
+  .created_at {
+    color: $primary_gray_color;
+    font-size: 0.8rem;
+  }
+}
+
+.button {
+  display: flex;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.875rem;
+  border-radius: 0.2rem;
+  color: $primary_color;
+  cursor: pointer;
+  border: 1px solid $primary_color;
+  height: min-content;
+
+  .icon {
+    margin-right: 3px;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+}
+
+.description {
+  font-weight: 300;
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: $primary_gray_color;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .read {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: $primary_gray_color;
+  }
+
+  .tags {
+    display: flex;
+
+    .tag {
+      font-weight: 300;
+      font-size: 0.8rem;
+      border: 1px solid $primary_gray_color;
+      margin-right: 3px;
+      padding: 2px 8px;
+      border-radius: 10rem;
+      color: $primary_gray_color;
+    }
+  }
+}
